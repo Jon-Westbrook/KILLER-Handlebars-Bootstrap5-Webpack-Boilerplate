@@ -1,0 +1,21 @@
+.footer {
+  background: #25323C;
+
+  @include media-breakpoint-up(md) {
+    height: 136px;
+
+    .container {
+      height: 100%;
+    }
+  }
+
+  .footer-nav-item a {
+    color: #3CC8FF;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
+  }
+}

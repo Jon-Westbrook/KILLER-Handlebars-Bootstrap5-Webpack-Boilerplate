@@ -1,0 +1,11 @@
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* the slickest text out there */
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+  text-size-adjust: none;
+  -webkit-text-size-adjust: 100%;
+}
