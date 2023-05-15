@@ -1,0 +1,23 @@
+{
+  "canonical": "https://www.cmegroup.com/opportunity",
+  "indexTitle": "Where Risk Meets Opportunity",
+  "metaDesc": "As the world's leading derivatives marketplace, CME Group offers the widest range of global benchmark futures and options products.",
+  "keywords": "cme group, cme, cbot, nymex, manage risk, risk management, futures exchange, futures trading, trade futures, commodity/commodities exchange, derivatives trading, derivatives exchange, futures markets, futures and options trading, options exchange, commodity options, commodity future trading, commodity markets, chicago mercantile exchange, chicago board of trade, new york mercantile exchange",
+  "twitterTitle": "Where Risk Meets Opportunity",
+  "ogImage": "https://www.cmegroup.com/content/dam/cmegroup/images/og-cme-group.jpg",
+  "bg-video-src": "./assets/videos/Landing Page Video_v7B_16x9_2000.mp4",
+  "logo-src": "./assets/img/svg-sprite/sprite.svg#logo",
+  "hero-heading": "Where risk meets opportunity",
+  "play-pause-src": "./assets/img/svg-sprite/sprite.svg#play-button-40",
+  "desc": "CME Group provides unmatched access to the global financial marketplace, with products and services built to help clients efficiently manage risk and capture opportunities. This is where market participants come to trade the widest range of global benchmark products across all major asset classes, and to access extensive market data and insights.",
+  "arrow-right-src": "./assets/img/svg-sprite/intermediate-svg/arrow-right-16.svg",
+  "learn-more-url": "https://www.cmegroup.com/company/about-us.html",
+  "learn-more-copy": "Learn more about CME Group",
+  "sec-1-heading": "We empower those who act",
+  "sec-1-subhead": "Take a deep dive into CME Group, our role in the markets and how we empower market participants.",
+  "mkt-copy": "This is where risk meets opportunity, and where deep liquidity gives you the confidence to act.",
+  "explore-cta": "Explore the markets",
+  "data-copy": "Access the industry&rsquo;s most robust data sets, with the broadest and deepest view of the markets.",
+  "services-copy": "Tech solutions designed to create a seamless trading experience and make CME Group markets work for you.",
+  "videos-heading": "See our global ad campaign"
+}
