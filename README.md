@@ -1,8 +1,8 @@
 ## Handlebars / Bootstrap / Webpack / Gulp Boilerplate
 
 ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
-[![license](https://img.shields.io/github/license/maksabuzyarov/gulp-webpack-handlebars)](https://github.com/maksabuzyarov/gulp-webpack-handlebars/blob/master/LICENSE)
-![version](https://img.shields.io/github/package-json/v/maksabuzyarov/gulp-webpack-handlebars)
+[![license](https://img.shields.io/github/Jon-Westbrook/Handlebars-Bootstrap5-Webpack-Boilerplate)](https://github.com/maksabuzyarov/gulp-webpack-handlebars/blob/master/LICENSE)
+![version](https://img.shields.io/github.com/Jon-Westbrook/Handlebars-Bootstrap5-Webpack-Boilerplate)
 
 This boilerplate project uses **gulp-webpack-handlebars-bootstrap-5** as a flexible template for web development. It has a sophisitcated yet minimalist set organization for creating responsive, high-performance and lightweight pages.
 
