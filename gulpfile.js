@@ -1,0 +1,146 @@
+'use strict';
+
+import gulp from 'gulp';
+import { hideBin } from 'yargs/helpers';
+import yargs from 'yargs/yargs';
+import c from 'ansi-colors';
+import { resolve } from 'path';
+
+const __dirname = resolve();
+
+const argv = yargs(hideBin(process.argv)).options({
+  production: {
+      alias: 'p',
+      describe: 'Build for production',
+      type: 'boolean'
+  }
+}).argv;
+
+const production = argv.production;
+
+if (production) {
+  console.log(c.green.bold.underline('🚚 Production mode'));
+} else {
+  console.log(c.yellow.bold.underline('🔧 Development mode'));
+}
+
+
+
+
+
+const paths = {
+  dist: './dist/',
+  views: {
+    src: './src/views/templates/**/*.html',
+    pages: './src/views/templates/',
+    partials: './src/views/partials/',
+    helpers: './src/views/helpers/',
+    data: './src/views/data',
+    dist: './dist/',
+    watch: './src/views/**/*.{html,hbs,json}',
+  },
+  styles: {
+    src: './src/styles/*.{scss,sass}',
+    dist: './dist/assets/styles/',
+    watch: './src/styles/**/*.{scss,sass}',
+  },
+  fonts: {
+    src: './src/fonts/**/*.{woff,woff2,eot,ttf,svg}',
+    dist: './dist/assets/fonts/',
+    watch: './src/fonts/**/*.{woff,woff2,eot,ttf,svg}',
+  },
+  favicons: {
+    src: "./src/img/favicon/*.{jpg,jpeg,png,gif}",
+    dist: "./dist/assets/img/favicons/",
+  },
+  sprites: {
+    src: "./src/img/svg-sprite/*.svg",
+    dist: "./dist/assets/img/svg-sprite/",
+    watch: "./src/img/svg-sprite/*.svg"
+  },
+  images: {
+    src: [
+      './src/img/**/*.{jpg,jpeg,png,gif,tiff,svg,ico}',
+      '!./src/img/svg-sprite/*',
+    ],
+    dist: './dist/assets/img/',
+    watch: './src/img/**/*.{jpg,jpeg,png,gif,svg,tiff}',
+  },
+  videos: {
+    src: [
+      './src/videos/**/*.*'
+    ],
+    dist: './dist/assets/videos/',
+    watch: './src/videos/**/*.*',
+  },
+  scripts: {
+    src: './src/js/main.js',
+    dist: './dist/assets/js/',
+    srcOther: './src/js/other/*.js',
+    distOther: './dist/assets/js/other/',
+    watch: './src/js/**/*.js',
+  },
+  vendors: {
+    src: './src/vendors/**/*.*',
+    dist: './dist/assets/vendors/'
+  },
+  assets: {
+    dist: './dist/assets/',
+  },
+};
+
+const config = {
+  production: production,
+  plumber: {
+    errorHandler: function(error) {
+      console.log(c.red(error.message));
+      this.emit('end');
+    }
+  },
+  fileInclude: {
+    prefix: '@@',
+    basepath: __dirname,
+    context: {},
+  },
+  metadata: {
+    author: 'Jonathon Westbrook',
+    year: (new Date()).getFullYear()
+  }
+};
+
+
+
+// -------------------------------------
+//   All tasks
+// -------------------------------------
+
+import './tasks/clean.js';
+import './tasks/favicons.js';
+import './tasks/fonts.js';
+import './tasks/images.js';
+import './tasks/videos.js';
+import './tasks/notify.js';
+import './tasks/scripts.js';
+import './tasks/sprites.js';
+import './tasks/styles.js';
+import './tasks/vendors.js';
+import './tasks/views.js';
+import './tasks/webserver.js';
+
+// -------------------------------------
+//   Task: default
+// -------------------------------------
+
+gulp.task('default',
+  gulp.series('clean', gulp.parallel('styles', 'scripts', 'images', 'videos', 'fonts', 'views', 'favicons', 'sprites', 'vendors'), 'server'));
+
+
+// -------------------------------------
+//   Task: build
+// -------------------------------------
+
+gulp.task(
+  'build',
+  gulp.series('clean', gulp.parallel('styles', 'scripts', 'images', 'videos', 'fonts', 'views', 'favicons', 'sprites', 'vendors'), 'say:build'));
+
+export { paths, config };
